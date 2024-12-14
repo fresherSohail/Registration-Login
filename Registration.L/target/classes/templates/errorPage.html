@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* Fullscreen container for video */
+        body {
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+        }
+
+        .container{
+          text-align:center;
+        }
+
+        .option{
+           margin-top:13%;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="heading">
+        <h1  th:text="${message}"></h1>
+        <h1 style="text-align:left; margin-left:3%; color:teal">Please do Registration</h1>
+
+        <form action="registrate" modelAttribute="registrate" method="post">
+
+            <h4 style="text-align:left; padding-bottom:5%;margin-left:5%; color:blue">Enter your information</h4>
+
+            <label for="firstname">First Name: </label>
+            <input id="firstname" type="text" name="firstname" placeholder="enter your first name"/>  &nbsp &nbsp &nbsp &nbsp &nbsp
+
+            <label for="lastname">Last Name: </label>
+            <input id="lastname" type="text" name="lastname" placeholder="enter your last name"/><br><br>
+
+            <label for="username">Username</label>
+            <input id="username" type="text" name="username" placeholder="make your username" style="margin-right:1%"/>&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp
+
+            <label for="email">Email: </label>
+            <input id="email" type="email" name="email" placeholder="set your email id" style="margin-right:4%"/><br><br>
+
+            <label for="password">Password: </label>
+            <input id="password" type="password" name="password" placeholder="set your password" style="margin-right:1%">
+
+            <button>
+            <input type="submit" value="submit" id="submit">
+            </button>
+
+        </form>
+    </div>
+
+
+    <div class="option">
+        <h5 style="color:blue; text-align:left; margin-left:6%">Note: If already registrate then please try again.</h5>
+            <a th:href="@{${Link}}">
+                <button type="button">Retry</button>
+            </a>
+    </div>
+
+</div>
+</body>
+</html>

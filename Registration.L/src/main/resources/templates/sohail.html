@@ -2,25 +2,36 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
     <title>Title</title>
 </head>
 <body>
 
-<div id="loginPage">
+<video class="video-background" autoplay muted loop>
+    <source src="https://cdn.pixabay.com/video/2017/06/05/9584-220312371_large.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
-    <h1>Login Form</h1>
+<div id="container">
 
-    <div class="container">
+    <form action="processform"  modelAttribute="processform" method="post">
 
-        <label name="username text-center">Username: </label>
-        <input type="text" id="username" name="username"/>
+        <label for="login" id="lblogin">Login: </label>
+        <input id="login" name="login" placeholder="Username"/>
 
-        <label name="password text-center">Password: </label>
-        <input type="password" id="password" name="password"/>
+        <br><br>
 
-        <button onclick="submit">Submit</button>
+        <label for="password" >Password: </label>
+        <input id="password" name="password" placeholder="Password"/><br><br>
 
-    </div>
+        <button>
+            <input type="submit" value="Sign Up" id="submit"/>
+        </button>
+
+
+    </form>
+
 </div>
+
 </body>
 </html>
